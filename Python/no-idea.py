@@ -1,10 +1,10 @@
 n, m = map(int,input().split())
-arr = [int(i) for i in input().split()]
-A = [int(i) for i in input().split()]
-B = [int(i) for i in input().split()]
-print(len(list(set(arr).intersection(A)))-len(list(set(arr).intersection(B))))
-# print(sum([(i in A) - (i in B) for i in arr]))
-
+arr = list(map(int,input().split()))
+A = list(map(int,input().split()))
+B = list(map(int,input().split()))
+# print(len(list(set(arr).intersection(A)))-len(list(set(arr).intersection(B))))
+# print(sum([1 for i in A if i in arr]) - sum([1 for i in B if i in arr]))
+print(sum(list(map(lambda x: 1 if x in arr else 0, A))) - sum(list(map(lambda x: 1 if x in arr else 0, B))))
 '''
 n, m = map(int,input().split())
 arr = [int(i) for i in input().split()]
