@@ -22,5 +22,7 @@ def print_rangoli(size):
         row = i.center(width,'-')
         arr = arr + row + '\n'
     print(arr)
-n = int(input())
-print_rangoli(n)
+# n = int(input())
+# print_rangoli(n)
+for i in range(5,0,-1):
+    print(i)
