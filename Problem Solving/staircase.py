@@ -7,37 +7,27 @@ import re
 import sys
 
 #
-# Complete the 'diagonalDifference' function below.
+# Complete the 'staircase' function below.
 #
-# The function is expected to return an INTEGER.
-# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+# The function accepts INTEGER n as parameter.
 #
 
-def diagonalDifference(arr):
-    lr_diagonal = 0
-    rl_diagonal = 0
-    p = 0
-    for i in arr:
-        lr_diagonal += i[p]
-        p += 1
-    p = -1
-    for i in arr:
-        rl_diagonal += i[p]
-        p -= 1
-    return max(lr_diagonal,rl_diagonal)-min(lr_diagonal,rl_diagonal)
+def staircase(n):
+    arr =''
+    k = n-1
+    for i in range(n):
+        row = ''
+        for j in range(n):
+            if j>=k:
+                row += '#'
+            else:
+                row += ' '
+        arr += row + '\n'
+        k -= 1
+    print(arr)
+        
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
     n = int(input().strip())
 
-    arr = []
-
-    for _ in range(n):
-        arr.append(list(map(int, input().rstrip().split())))
-
-    result = diagonalDifference(arr)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+    staircase(n)
